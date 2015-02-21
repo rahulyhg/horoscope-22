@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+    <head>
+        <meta  http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+        <link rel="stylesheet" type="text/css" href="css/style-table.css">
+    </head>
+    <body style="background-color:#FFF0F5;">
+         <center><cite class="sub">Ваш гороскоп</cite></center>
+        <p>
+            <cite class="undersub">Выберите один из типов гороскопов:</cite>
+        </p>
+        <form name="form1">
+            <p>
+                <input type="radio" name="zodiak" onclick="if (this.checked) {nameZod='Nzodiak'; form1.east.checked=false; form1.numeric.checked=false; }" >
+                Зодиакальный<br>
+                <input type="radio" name="east" onclick="if (this.checked) {nameZod='Neast'; form1.zodiak.checked=false; form1.numeric.checked=false; }" >
+                Востчный<br>
+                <input type="radio" name="numeric" onclick="if (this.checked) {nameZod='Nnumeric'; form1.zodiak.checked=false; form1.east.checked=false; }" >
+                Числовой
+            </p>
+            <p>
+                <cite class="undersub">Введите дату рождения:</cite>
+            </p>
+            <p>
+                День:<input type="text" id="day" size="20" />
+            </p>
+            <p>
+                Месяц:
+                <select name="month">
+                    <option>Январь</option>
+                    <option>Февраль</option>
+                    <option>Март</option>
+                    <option>Апрель</option>
+                    <option>Май</option>
+                    <option>Июнь</option>
+                    <option>Июль</option>
+                    <option>Август</option>
+                    <option>Сентябрь</option>
+                    <option>Октябрь</option>
+                    <option>Ноябрь</option>
+                    <option>Декабрь</option>
+                </select>
+            </p>
+            <p>
+                Год:<input type="text" name="year" size="20" />
+            </p>
+            <center><input id="submitButton1" class="button" type="button" value="Готово" onclick="null" /></center>
+        </form>
+    </body>
+</html>

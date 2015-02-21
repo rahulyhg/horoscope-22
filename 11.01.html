@@ -1,0 +1,46 @@
+﻿<DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hello</title>
+</head>
+<body>
+<SCRIPT LANGUAGE="JavaScript">
+<!--Begin
+var mfBanners= [
+		['1.html', '1.jpg'],
+		['1.html', '2.jpg']
+               ];
+
+var mfie = false;
+if(document.all)
+{
+		mfie = true;
+}
+
+var mfBannerIndex = 0;
+function mfBannerChange() 
+{
+		var htmlString = '<a target="_blank" href="'+mfBanners[mfBannerIndex][0]+'"> <img border="0" width="468" height="60"
+src="'+mfBanners[mfBannerIndex][i]+'"></a>';
+	if( mfie)
+	{
+		docunent.all.banner.innerHTML = htmlString;
+	}
+else
+{
+	document.layers["banner"].document.open();
+	document.layers["banner"].document.write( htmlString);
+	document.layers["banner"].document.close()
+if(mfBannerIndex < mfBanners.lenght - 1)
+		mfBannerIndex++;
+ekse
+		mfBannerIndex = 0;
+}
+setInterval("mfBannerChange()", 5000);
+// End -->
+</script>
+
+<div id="Banner" style="position:absolute; top:150: left:30;"></div>
+</body>
+</html> 
