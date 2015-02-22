@@ -9,7 +9,7 @@ function isnumber (str) {
     return !isNaN(Number(str)) && str.length > 0;
 }
 function submitButtonClick () {
-    if (isnumber (document.getElementById("day").value)) {
+    if (isnumber (frames[0].window.document.getElementById("day").value)) {
         alert("Day: " + frames[0].window.document.getElementById("day").value);
     }
     else {
@@ -17,5 +17,5 @@ function submitButtonClick () {
     }
 }
 window.onload = function () {
-    frames[0].window.document.getElementById("submitButton1").onclick = submitButtonClick;
+    frames[0].window.document.getElementById("submitButton1").addEventListener('click', submitButtonClick, false);
 };
