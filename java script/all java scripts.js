@@ -1,7 +1,7 @@
 ﻿var nameZod='null';
 
 window.onload = function () {
-    frames[0].window.document.getElementById("submitButton1").addEventListener('click', analize, false);
+    frames[0].window.document.getElementById("submitButton1").addEventListener('click', procMain, false);
     var horoscopeTypes = frames[0].document.forms["form1"].querySelectorAll("input[type='radio']");
     for (var i = 0; i != horoscopeTypes.length; ++i) {
         horoscopeTypes[i].addEventListener('click', setHoroscopeType, false);
@@ -76,7 +76,7 @@ function isnumber(str)
                    alert("В этом месяце 30 дней!");
                else
                {
-                if((form["day"].value>=29)&&(id==1)&&(!FindVisokosnYear(form["year"].value)))
+                if((form["day"].value>=29)&&(id==1)&&(!findVisokosnYear(form["year"].value)))
                     alert("В этом месяце 28 дней!");
                 else
                   b=true;
@@ -120,9 +120,8 @@ function findVisokosnYear(inputYear)
 
 function eastYear()
 {
+    var form = frames[0].window.document.forms["form1"];
 	if(findYear("1992", form["year"].value)==true)
-
-
         top.frames[1].location='East/Monkey.html';
        else
          {
@@ -169,7 +168,7 @@ function eastYear()
 	                                if(findYear("2003", form["year"].value)==true)
 	                                  top.frames[1].location='East/Goat.html';
                                     }
-                                         }
+                                  }
                                 }
                                           
                               }
@@ -180,5 +179,11 @@ function eastYear()
              }
          }
        }
+}
+
+function procMain () {
+    if (analize()) {
+        eastYear();
+    }
 }
 
