@@ -2,7 +2,32 @@
 
 window.onload = function () {
     frames[0].window.document.getElementById("submitButton1").addEventListener('click', analize, false);
+    var horoscopeTypes = frames[0].document.forms["form1"].querySelectorAll("input[type='radio']");
+    for (var i = 0; i != horoscopeTypes.length; ++i) {
+        horoscopeTypes[i].addEventListener('click', setHoroscopeType, false);
+    }
 };
+
+function setHoroscopeType (event) {
+    var form = frames[0].window.document.forms["form1"];
+    switch (event.target.attributes["id"].value) {
+        case 'zodiak':
+            form['east'].checked=false;
+            form['numeric'].checked=false;
+            nameZod = 'zodiak';
+            break;
+        case 'east':
+            form['zodiak'].checked=false;
+            form['numeric'].checked=false;
+            nameZod = 'east';
+            break;
+        default:
+            form['zodiak'].checked=false;
+            form['east'].checked=false;
+            nameZod = 'numeric';
+    }
+}
+
 
 function isnumber(str)
 	{
