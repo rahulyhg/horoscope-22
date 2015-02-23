@@ -73,7 +73,7 @@ function isnumber(str)
 }		
 
 
-function FindYear(yearZod, inputYear)
+function findYear(yearZod, inputYear)
 {
 	var b=false;
 	var mod, res, c;
@@ -88,7 +88,7 @@ function FindYear(yearZod, inputYear)
    return b;
 }
 
-function FindVisokosnYear(inputYear)
+function findVisokosnYear(inputYear)
 {
 	var b=false;
 	var mod, res, c;
@@ -102,55 +102,55 @@ function FindVisokosnYear(inputYear)
    return b
 }
 
-function EastYear()
+function eastYear()
 {
-	if(FindYear("1992", form.getElementById("year").value)==true)
+	if(findYear("1992", form.getElementById("year").value)==true)
 
 
         top.frames[1].location='East/Monkey.html';
        else
          {
-	   if(FindYear("1993", form.getElementById("year").value)==true)
+	   if(findYear("1993", form.getElementById("year").value)==true)
 	    top.frames[1].location='East/Cock.html';
 	    else
             {
-	      if(FindYear("1994", form.getElementById("year").value)==true)
+	      if(findYear("1994", form.getElementById("year").value)==true)
 	       top.frames[1].location='East/Dog.html';
 	       else
                {
-	         if(FindYear("1995", form.getElementById("year").value)==true)
+	         if(findYear("1995", form.getElementById("year").value)==true)
 	          top.frames[1].location='East/Pig.html';
 	          else
                   {
-	            if(FindYear("1996", form.getElementById("year").value)==true)
+	            if(findYear("1996", form.getElementById("year").value)==true)
 	             top.frames[1].location='East/Mouse.html';
 	             else
                      {
-	              if(FindYear("1997", form.getElementById("year").value)==true)
+	              if(findYear("1997", form.getElementById("year").value)==true)
 	                top.frames[1].location='East/Bull.html';
 	                else
                         {
-	                 if(FindYear("1998", form.getElementById("year").value)==true)
+	                 if(findYear("1998", form.getElementById("year").value)==true)
 	                   top.frames[1].location='East/Tiger.html';
 	                  else
                           {
-	                    if(FindYear("1999", form.getElementById("year").value)==true)
+	                    if(findYear("1999", form.getElementById("year").value)==true)
 	                      top.frames[1].location='East/Rabbit.html';
 	                     else
                              { 
-	                       if(FindYear("2000", form.getElementById("year").value)==true)
+	                       if(findYear("2000", form.getElementById("year").value)==true)
 	                         top.frames[1].location='East/Dragon.html';
 	                       else
                                {
-	                          if(FindYear("2001", form.getElementById("year").value)==true)
+	                          if(findYear("2001", form.getElementById("year").value)==true)
 	                            top.frames[1].location='East/Snake.html';
 	                          else
                                   {
-	                             if(FindYear("2002", form.getElementById("year").value)==true)
+	                             if(findYear("2002", form.getElementById("year").value)==true)
 	                               top.frames[1].location='East/Horse.html';
 	                            else
                                     {
-	                                if(FindYear("2003", form.getElementById("year").value)==true)
+	                                if(findYear("2003", form.getElementById("year").value)==true)
 	                                  top.frames[1].location='East/Goat.html';
                                     }
                                          }
