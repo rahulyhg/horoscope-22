@@ -1,22 +1,27 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
     <head>
         <meta  http-equiv="Content-Type" content="text/html; charset=UTF-8" >
         <link rel="stylesheet" type="text/css" href="css/style-table.css">
     </head>
     <body style="background-color:#FFF0F5;">
-         <center><cite class="sub">Ваш гороскоп</cite></center>
+        <p style="text-align:center;">
+            <cite class="sub">Ваш гороскоп</cite>
+        </p>
         <p>
             <cite class="undersub">Выберите один из типов гороскопов:</cite>
         </p>
         <div id="form1">
             <p>
+                <input type="radio" id="zodiak" onclick="if (this.checked) {nameZod='Nzodiak'; document.getElementById('east').checked=false; document.getElementById('numeric').checked=false; }" >
                 <label for="zodiak">Зодиакальный</label>
-                <input type="radio" id="zodiak" onclick="if (this.checked) {nameZod='Nzodiak'; form1.east.checked=false; form1.numeric.checked=false; }" >
+                <br>
+                <input type="radio" id="east" onclick="if (this.checked) {nameZod='Neast'; document.getElementById('zodiak').checked=false; document.getElementById('numeric').checked=false; }" >
                 <label for="east">Восточный</label>
-                <input type="radio" id="east" onclick="if (this.checked) {nameZod='Neast'; form1.zodiak.checked=false; form1.numeric.checked=false; }" >
+                <br>
+                <input type="radio" id="numeric" onclick="if (this.checked) {nameZod='Nnumeric'; document.getElementById('zodiak').checked=false; document.getElementById('east').checked=false; }" >
                 <label for="numeric">Числовой</label>
-                <input type="radio" id="numeric" onclick="if (this.checked) {nameZod='Nnumeric'; form1.zodiak.checked=false; form1.east.checked=false; }" >
+                <br>
             </p>
             <p>
                 <cite class="undersub">Введите дату рождения:</cite>
@@ -46,7 +51,9 @@
                 <label for="year">Год:</label>
                 <input type="text" id="year" size="20" />
             </p>
-            <center><input id="submitButton1" class="button" type="button" value="Готово" /></center>
+            <p style="text-align:center;">
+                <input id="submitButton1" class="button" type="button" value="Готово" />
+            </p>
         </div>
     </body>
 </html>

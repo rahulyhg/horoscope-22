@@ -9,8 +9,8 @@ function isnumber (str) {
     return !isNaN(Number(str)) && str.length > 0;
 }
 function submitButtonClick () {
-    if (isnumber (frames[0].window.document.getElementById("day").value)) {
-        alert("Day: " + frames[0].window.document.getElementById("day").value);
+    if (isnumber (frames[0].window.document.getElementsByName("day").value)) {
+        alert("Day: " + frames[0].window.document.getElementsByName("day").value);
     }
     else {
         alert("Please enter a valid day number.");
