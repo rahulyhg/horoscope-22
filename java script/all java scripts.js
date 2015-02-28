@@ -187,3 +187,30 @@ function procMain () {
     }
 }
 
+function getXMLHTTP(){
+    var XMLHTTP = null;
+    // IE check.
+    if(window.ActiveXObject){
+        try{
+            // IE6 check.
+            XMLHTTP = new ActiveXObject("Msxml2.XMLHTTP");
+        }
+        catch(e){
+            try{
+                // IE5 check.
+                XMLHTTP = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            catch(e){
+            }
+        }
+    }
+    else if(XMLHttpRequest){ // Rest of browsers.
+        try{
+            XMLHTTP = new XMLHttpRequest();
+        }
+        catch(e){
+        }
+    }
+    return XMLHTTP;
+}
+
