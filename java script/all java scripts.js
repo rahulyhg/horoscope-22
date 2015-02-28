@@ -1,4 +1,4 @@
-﻿var nameZod='null';
+﻿﻿var nameZod='null';
 
 window.onload = function () {
     frames[0].window.document.getElementById("submitButton1").addEventListener('click', procMain, false);
