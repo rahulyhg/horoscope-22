@@ -1,12 +1,12 @@
 ﻿/*Название иллюстративного материала*/
-cite.sub {font-weight: bold; color: red; font-size: 26pt;
+cite.sub { font-weight: bold; color: red; font-size: 26pt;
 		letter-spacing: 0.6em; text-decoration:underline;}
-cite.undersub {font-weight: bold; color: darkmagenta; font-size: 18pt;
+cite.undersub { font-weight: bold; color: darkmagenta; font-size: 18pt;
 		 text-decoration:underline;}
-input.button {font-weight: bold;
+input.button { font-weight: bold;
 	font-text: Arial;
 	font-style: oblique}
 
-em {font-weight: bold; color: blue; font-size: 24pt; text-align: center; }
-h1 {text-align: center; }
-		
+em { font-weight: bold; color: blue; font-size: 24pt; text-align: center; }
+h1 { text-align: center; }
+body { background-color: #FFF0F5; } 	

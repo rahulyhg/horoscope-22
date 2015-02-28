@@ -21,33 +21,38 @@ function setHoroscopeType (event) {
             form['numeric'].checked=false;
             nameZod = 'east';
             break;
-        default:
+        case 'numeric':
             form['zodiak'].checked=false;
             form['east'].checked=false;
             nameZod = 'numeric';
+            break;
+        default:
     }
 }
 
 
 function isnumber(str)
 	{
-		var b=false;
-		mas = new Array(10);
+		var mas = new Array(10);
 
 		for(var m=0; m<10; m++)
 		{
 			mas[m]=m;
 		}
 
-		for (var i = 0; i < str.length; i++)
-		{
-			var k = str.charAt(i);
-			for(var j=0; j < mas.length; j++)
-		        {
-			     if(k==mas[j])
-			     b=true;
-		        }
-	         }
+        var b = true;
+		outer: for (var i = 0; i < str.length && b == true; i++)
+                {
+                    var k = str.charAt(i);
+                    b = false;
+                    for(var j = 0; j < mas.length; j++)
+                    {
+                         if(k == mas[j]) {
+                             b = true;
+                             continue outer;
+                         }
+                    }
+                }
 	return b;
 }
   function analize()
@@ -183,7 +188,218 @@ function eastYear()
 
 function procMain () {
     if (analize()) {
-        eastYear();
+        switch (nameZod) {
+            case 'east':
+                eastYear();
+                break;
+            case 'zodiak':
+                zodiakDay();
+                break;
+            case 'numeric':
+                numb();
+                break;
+            default:
+        }
     }
 }
+
+function zodiakDay()
+{
+    var form = frames[0].window.document.forms["form1"];
+    var id = form["month"].selectedIndex;
+    if(((form["day"].value>=21)&&(id==2))||((form["day"].value<=20)&&(id==3)))
+     top.frames[1].location='Zodiak/Sheep.html';
+      else
+       {
+        if(((form["day"].value>=21)&&(id==3))||((form["day"].value<=21)&&(id==4)))
+         top.frames[1].location='Zodiak/Calf.html';
+          else
+           {  
+            if(((form["day"].value>=22)&&(id==4))||((form["day"].value<=21)&&(id==5)))
+             top.frames[1].location='Zodiak/Twins.html';
+              else
+               {
+                if(((form["day"].value>=22)&&(id==5))||((form["day"].value<=23)&&(id==6)))
+                 top.frames[1].location='Zodiak/Crayfish.html';
+                  else
+                   {
+                    if(((form["day"].value>=24)&&(id==6))||((form["day"].value<=23)&&(id==7)))
+                     top.frames[1].location='Zodiak/Lion.html';
+                      else
+                       {
+                        if(((form["day"].value>=24)&&(id==7))||((form["day"].value<=23)&&(id==8)))
+                         top.frames[1].location='Zodiak/Girl.html';
+                          else
+                           {
+                            if(((form["day"].value>=24)&&(id==8))||((form["day"].value<=23)&&(id==9)))
+                             top.frames[1].location='Zodiak/Scales.html';
+                              else
+                               {
+                                if(((form["day"].value>=24)&&(id==9))||((form["day"].value<=22)&&(id==10)))
+                                 top.frames[1].location='Zodiak/Scorpion.html';
+                                  else
+                                   {
+                                    if(((form["day"].value>=23)&&(id==10))||((form["day"].value<=21)&&(id==11)))
+                                     top.frames[1].location='Zodiak/Shot.html';
+                                      else
+                                       {
+                                        if(((form["day"].value>=22)&&(id==11))||((form["day"].value<=20)&&(id==0)))
+                                         top.frames[1].location='Zodiak/Kozerog.html';
+                                          else
+                                           {
+                                            if(((form["day"].value>=21)&&(id==0))||((form["day"].value<=19)&&(id==1)))
+                                             top.frames[1].location='Zodiak/Vodoley.html';
+                                              else
+                                               {
+                                                if(((form["day"].value>=20)&&(id==1))||((form["day"].value<=20)&&(id==2)))                                                                                                   top.frames[1].location='Zodiak/Fishes.html';
+                                               }
+                                           }
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                   }
+               }
+           }
+       }
+   }
+function numb()
+{
+	var s = 0;
+	var t = 0;
+	var sumall = 0;
+    var form = frames[0].window.document.forms["form1"];
+	var id = form["month"].selectedIndex + 1;
+     
+    for (var i = 0; i < form["day"].value.length; i++)
+    {
+         var k = form["day"].value.charAt(i);
+          s += parseInt(k, 10)
+    }
+	
+	for(i = 0; i < form["year"].value.length; i++)
+	{
+           var y = form["year"].value.charAt(i);
+           s += parseInt(y, 10)
+	}
+	if(id.length > 1)
+	{
+		t = parseInt(id.charAt(0)) + parseInt(id.charAt(1));
+	}
+	else
+		t = id;
+
+	var sum = s + t;
+	var g = sum.toString();
+
+	while(g.length > 1)
+	{
+		var sum1 = 0;
+		for(i = 0; i < g.length; i++)
+		{
+			var p = g.charAt(i);
+			sumall = parseInt(sum1) + parseInt(p);
+			sum1 = sumall;
+		}
+		g = sumall.toString();
+	}
+    if(sumall == 1)
+	   top.frames[1].location='Number/1.html';
+	else
+	{
+	 if(sumall==2)
+	  top.frames[1].location='Number/2.html';
+	   else
+           {
+	    if(sumall==3)
+	     top.frames[1].location='Number/3.html';
+              else
+	      {
+	       if(sumall==4)
+	        top.frames[1].location='Number/4.html';
+                 else
+	         {
+	          if(sumall==5)
+	           top.frames[1].location='Number/5.html';
+                    else
+	            {
+	             if(sumall==6)
+	              top.frames[1].location='Number/6.html';
+                       else
+	               {
+	                if(sumall==7)
+	                 top.frames[1].location='Number/7.html';
+                          else
+	                  {
+	                   if(sumall==8)
+	                    top.frames[1].location='Number/8.html';
+                             else
+	                     {
+	                      if(sumall==9)
+	                       top.frames[1].location='Number/9.html';
+			            }
+                      }
+                   }
+                }
+             }
+          }
+       }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    
+
+
+
+
+
+
+
+
 
